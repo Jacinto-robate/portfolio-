@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     siteName: "www.victorwilliams.me",
     images: [
       {
-        url: "https://user-images.githubusercontent.com/84178696/228620835-e3cc5c9b-72fc-4f54-a628-407ef7b650f5.png",
+        url: "https://drive.google.com/file/d/1-Yw_soN9sKCbAnYDZDD6aaSymGct15Da/view",
         width: 1200,
         height: 630,
         alt: "Victor Williams — Frontend Engineer",
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     creator: "victorwill__",
     creatorId: "1243720976552144897",
     images: [
-      "https://user-images.githubusercontent.com/84178696/228620835-e3cc5c9b-72fc-4f54-a628-407ef7b650f5.png",
+      "https://drive.google.com/file/d/1-Yw_soN9sKCbAnYDZDD6aaSymGct15Da/view",
     ],
   },
   robots: {
