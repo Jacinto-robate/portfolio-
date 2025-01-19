@@ -11,58 +11,59 @@ const syne = Syne({
 });
 
 export const metadata: Metadata = {
-  title: "Jacinto Robate — Frontend Engineer",
+  title: "Jacinto Robate — Engenheiro Software",
   description:
-    "Frontend Engineer and Web Designer, currently at Kora. Focused on interfaces and experiences, working remotely from Lagos, Nigeria.",
+    "Engenheiro de software e Web Designer, CEO da Nexus JR, atualmente disponível para trabalho. Focado em interfaces e experiências, trabalhando remotamente a partir de Tete, Moçambique.",
   generator: "Next.js",
-  applicationName: "Victor Williams",
+  applicationName: "Jacinto Robate",
   keywords: [
-    "freelance",
-    "developer",
-    "freelance developer",
+    "freelancer",
+    "desenvolvedor",
+    "desenvolvedor freelancer",
     "frontend",
     "react",
-    "frontend developer",
-    "frontend engineer",
-    "creative",
-    "creative developer",
-    "creative engineer",
-    "tech",
-    "nigeria",
+    "desenvolvedor frontend",
+    "engenheiro frontend",
+    "criativo",
+    "desenvolvedor criativo",
+    "engenheiro criativo",
+    "tecnologia",
+    "moçambique",
     "software",
-    "software developer",
-    "portfolio",
-    "frontend developer portfolio",
-    "creative developer portfolio",
+    "desenvolvedor de software",
+    "portfólio",
+    "portfólio desenvolvedor frontend",
+    "portfólio desenvolvedor criativo",
+    "Jacinto Robate",
+    "Jacinto Robate portfólio",
+    "Jacinto Sergio Robate",
   ],
   colorScheme: "dark",
   openGraph: {
-    title: "Victor Williams — Frontend Engineer",
+    title: "Jacinto Robate — Engenheiro Software",
     description:
-      "Frontend Engineer and Web Designer, currently at Kora. Focused on interfaces and experiences, working remotely from Lagos, Nigeria.",
-    url: "https://www.victorwilliams.me/",
-    siteName: "www.victorwilliams.me",
+      "Engenheiro de software e Web Designer, CEO da Nexus JR, atualmente disponível para trabalho. Focado em interfaces e experiências, trabalhando remotamente a partir de Tete, Moçambique.",
+    url: "https://www.jacintorobate.co.mz/",
+    siteName: "www.jacintorobate.co.mz",
     images: [
       {
-        url: "https://drive.google.com/file/d/1-Yw_soN9sKCbAnYDZDD6aaSymGct15Da/view",
+        url: "/images/meta.png",
         width: 1200,
         height: 630,
-        alt: "Victor Williams — Frontend Engineer",
+        alt: "Jacinto Robate — Engenheiro Software",
       },
     ],
-    locale: "en-US",
+    locale: "pt-BR",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Victor Williams — Frontend Engineer",
+    title: "Jacinto Robate — Engenheiro Software",
     description:
-      "Frontend Engineer and Web Designer, currently at Kora. Focused on interfaces and experiences, working remotely from Lagos, Nigeria.",
-    creator: "victorwill__",
+      "Engenheiro de software e Web Designer, CEO da Nexus JR, atualmente disponível para trabalho. Focado em interfaces e experiências, trabalhando remotamente a partir de Tete, Moçambique.",
+    creator: "Jacinto Robate",
     creatorId: "1243720976552144897",
-    images: [
-      "https://drive.google.com/file/d/1-Yw_soN9sKCbAnYDZDD6aaSymGct15Da/view",
-    ],
+    images: ["/images/meta.png"],
   },
   robots: {
     index: true,
@@ -77,7 +78,7 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  category: "technology",
+  category: "tecnologia",
 };
 
 type RootLayoutProps = {
@@ -86,7 +87,7 @@ type RootLayoutProps = {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="en">
+    <html lang="pt">
       <body
         className={`${syne.className} scroll-smooth scrollbar-thin scrollbar-track-[#0E1016] scrollbar-thumb-[#212531]`}
       >

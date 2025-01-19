@@ -1,110 +1,128 @@
-import SongCarousel from "./SongCarousel";
-import "../animations/animate.css";
-import AnimatedBody from "../animations/AnimatedBody";
-import AnimatedTitle from "../animations/AnimatedTitle";
+"use client";
+import React from "react";
+import { Terminal, Code, ChartNoAxesCombined } from "lucide-react";
+import { useInView } from "react-intersection-observer";
+import { TextGenerateEffect } from "components/ui/text-generate-effect";
+import { GlareCard } from "components/ui/glare-card";
+
+export const AnimatedTitle = ({
+  text,
+  className = "",
+  wordSpace = "",
+  charSpace = "",
+}: {
+  text: string;
+  className?: string;
+  wordSpace?: string;
+  charSpace?: string;
+}) => {
+  return (
+    <div className={className}>
+      {text.split(" ").map((word, i) => (
+        <span key={i} className={`inline-block ${wordSpace}`}>
+          {word.split("").map((char, j) => (
+            <span
+              key={j}
+              className={`inline-block ${charSpace} animate-fade-in`}
+            >
+              {char}
+            </span>
+          ))}
+        </span>
+      ))}
+    </div>
+  );
+};
 
 const About = () => {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
+  const words = `Sou Jacinto Sérgio Robate um desenvolvedor full-stack especializado em tecnologias modernas como Node.js, React, Next.js, TypeScript e GraphQL. Tenho experiência no desenvolvimento de aplicações web, móveis e desktop, e integrações com inteligência artificial.
+  
+  Além disso, sou especialista em hacking ético e segurança da informação, focando em testes de intrusão e análise de vulnerabilidades.`;
+
   return (
     <section
       className="relative z-10 w-full items-center justify-center overflow-hidden bg-[#0E1016] bg-cover bg-center pt-16 pb-36 md:pt-20 md:pb-44 lg:pt-20 lg:pb-56"
       id="about"
     >
-      <div className="mx-auto flex w-[90%] flex-col items-center justify-center lg:max-w-[1212.8px]">
-        <AnimatedTitle
-          text={
-            "I MAKE BRANDS BEAUTIFUL, WEBSITES POWERFUL AND CONTENT CAPTIVATING."
-          }
-          className={
-            "mb-10 text-left text-[40px] font-bold leading-[0.9em] tracking-tighter text-[#e4ded7] sm:text-[45px] md:mb-16 md:text-[60px] lg:text-[80px]"
-          }
-          wordSpace={"mr-[14px]"}
-          charSpace={"mr-[0.001em]"}
-        />
-
-        <div className="mx-auto flex w-[100%] flex-col lg:max-w-[1200px] lg:flex-row lg:gap-20">
-          <div className="mb-10 flex w-[100%] flex-col gap-4 text-[18px] font-medium  leading-relaxed tracking-wide text-[#e4ded7] md:mb-16 md:gap-6 md:text-[20px] md:leading-relaxed lg:mb-16  lg:max-w-[90%] lg:text-[24px] ">
-            <AnimatedBody
-              text={
-                "I specialize in crafting high-converting landing pages and websites for SaaS, Web3 & AI startups. I'm passionate about building software that makes a difference."
-              }
-            />
-            <AnimatedBody
-              text={
-                "Whether I’m designing a sleek user interface or coding a complex application, I’m always striving to create something unique and innovative. I love experimenting with new technologies and staying up-to-date with the latest trends in the tech world."
-              }
-              className={"hidden"}
-            />
-            <AnimatedBody
-              text={
-                "Beyond my work as a frontend developer, I'm an active leader in tech communities on campus. As a member of the Google Developer Student Clubs and Microsoft Learn Student Ambassadors, I've led workshops and mentored other students."
-              }
-            />
-            <AnimatedBody
-              text={
-                "When I'm not coding, you can find me binge-watching anime, hanging out with friends, cheering on Manchester United, or discovering new music in my favorite genres like RnB, UK Drill, and Chill Rap."
-              }
-            />
-            <AnimatedBody
-              text={
-                "I'm currently working on some exciting projects that I can't wait to share with you. But I’m always open to new opportunities and collaborations."
-              }
-            />
-          </div>
-
-          <div className="mb-24 flex w-[100%] flex-col gap-4 text-[18px] font-normal leading-relaxed tracking-wide text-[#e4ded7]/80 sm:mb-32 md:mb-40 md:gap-6 md:text-[16px] md:leading-normal lg:mt-0 lg:mb-16 lg:max-w-[30%] lg:text-[18px]">
-            <div className="flex flex-col gap-4 md:gap-3">
-              <AnimatedTitle
-                text={"Frontend Tools"}
-                className={
-                  "text-[24px] text-[#e4ded7] md:text-[30px] lg:text-[20px]"
-                }
-                wordSpace={"mr-[0.25em]"}
-                charSpace={"mr-[0.01em]"}
-              />
-              <AnimatedBody
-                text={
-                  "JavaScript (ES6+), React, Next.js, TypeScript, Prismic CMS, Redux, Redux Toolkit, React Testing Library, Vitetest, HTML5, Git/GitHub, NextAuth, Formik."
-                }
-              />
-            </div>
-            <div className="flex flex-col gap-3">
-              <AnimatedTitle
-                text={"UI Libraries"}
-                className={
-                  "text-[24px] text-[#e4ded7] md:text-[30px] lg:text-[20px]"
-                }
-                wordSpace={"mr-[0.25em]"}
-                charSpace={"mr-[0.01em]"}
-              />
-              <AnimatedBody
-                text={
-                  "CSS3/SCSS/SASS, Tailwind CSS, Material UI, Framer Motion, GSAP, Bootstrap, Chart.js."
-                }
-              />
-            </div>
-            <div className="flex flex-col gap-3">
-              <AnimatedTitle
-                text={"Design Tools"}
-                className={
-                  "text-[24px] text-[#e4ded7] md:text-[30px] lg:text-[20px]"
-                }
-                wordSpace={"mr-[0.25em]"}
-                charSpace={"mr-[0.01em]"}
-              />
-              <AnimatedBody
-                text={
-                  "Figma, Framer, FigJam, Adobe XD, ProtoPie, Adobe Photoshop, UX Research, UI Design, Prototyping."
-                }
-              />
-            </div>
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mb-6 text-center sm:mb-8 lg:mb-6">
+          <AnimatedTitle
+            text="SOBRE MIM"
+            className="text-2xl font-bold text-white sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl"
+            wordSpace="mr-2 sm:mr-3"
+            charSpace="mr-[0.01em] sm:mr-[0.02em]"
+          />
+          <div className="relative mx-auto h-8 w-full max-w-4xl">
+            <div className="absolute left-[10%] right-[10%] top-0 h-[2px] w-[80%] bg-gradient-to-r from-transparent via-indigo-500 to-transparent blur-sm" />
+            <div className="absolute left-[10%] right-[10%] top-0 h-px w-[80%] bg-gradient-to-r from-transparent via-indigo-500 to-transparent" />
+            <div className="absolute left-[25%] right-[25%] top-0 h-[5px] w-[50%] bg-gradient-to-r from-transparent via-sky-500 to-transparent blur-sm" />
+            <div className="absolute left-[25%] right-[25%] top-0 h-px w-[50%] bg-gradient-to-r from-transparent via-sky-500 to-transparent" />
           </div>
         </div>
-        <div className="mt-10 flex flex-col md:-mt-0 lg:mt-28">
-          <SongCarousel />
-          <AnimatedBody
-            text="A few songs I can recommend if you're looking for some fresh tunes :)"
-            className="absolute bottom-10 right-0 left-0 mx-auto w-[90%] text-center text-[14px] font-semibold uppercase text-[#e4ded7] sm:w-[500px] md:bottom-12 md:w-[550px] md:text-[16px] "
-          />
+
+        <div
+          ref={ref}
+          className={`mx-auto mb-16 max-w-4xl px-4 text-xl transition-opacity duration-1000 ${
+            inView ? "opacity-100" : "opacity-0"
+          }`}
+        >
+          {inView && <TextGenerateEffect words={words} />}
+        </div>
+
+        <div className="mx-auto max-w-6xl">
+          <div className="grid grid-cols-1 gap-8 px-4 sm:grid-cols-3 sm:gap-12 md:gap-16 lg:gap-20">
+            <GlareCard className="rounded-xl p-6 shadow-lg">
+              <div className="flex h-full flex-col justify-end space-y-4">
+                <div className="flex items-center gap-3">
+                  <Terminal className="h-8 w-8 text-blue-400" />
+                  <h3 className="text-lg font-semibold text-white">
+                    Expertise Técnica
+                  </h3>
+                </div>
+                <p className="text-sm text-gray-300">
+                  Domínio avançado das tecnologias mais modernas, garantindo
+                  código limpo, manutenível e otimizado para performance.
+                  Experiência com React, TypeScript e as melhores práticas de
+                  desenvolvimento.
+                </p>
+              </div>
+            </GlareCard>
+
+            <GlareCard className="rounded-xl p-6 shadow-lg">
+              <div className="flex h-full flex-col justify-end space-y-4">
+                <div className="flex items-center gap-3">
+                  <Code className="h-8 w-8 text-blue-400" />
+                  <h3 className="text-lg font-semibold text-white">
+                    Comprometimento
+                  </h3>
+                </div>
+                <p className="text-sm text-gray-300">
+                  Dedicação total aos projetos, com comunicação clara e
+                  transparente. Cumprimento rigoroso de prazos e disponibilidade
+                  para ajustes e melhorias contínuas no produto.
+                </p>
+              </div>
+            </GlareCard>
+
+            <GlareCard className="rounded-xl p-6 shadow-lg">
+              <div className="flex h-full flex-col justify-end space-y-4">
+                <div className="flex items-center gap-3">
+                  <ChartNoAxesCombined className="h-8 w-8 text-blue-400" />
+                  <h3 className="text-lg font-semibold text-white">Inovação</h3>
+                </div>
+                <p className="text-sm text-gray-300">
+                  Foco em soluções criativas e inovadoras, aliando design
+                  atraente com usabilidade. Experiência em criar interfaces
+                  modernas e responsivas que encantam os usuários.
+                </p>
+              </div>
+            </GlareCard>
+          </div>
         </div>
       </div>
     </section>
