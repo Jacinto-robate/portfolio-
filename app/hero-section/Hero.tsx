@@ -120,7 +120,7 @@ const Hero = () => {
           <p className="z-50 text-center text-[16px] font-medium text-[#e4ded7] md:text-[20px] lg:text-left">
             Engenheiro de software e Web Designer, CEO da{" "}
             <Link
-              href="https://www.korahq.com/"
+              href=""
               target="_blank"
               className="underline underline-offset-2 hover:no-underline"
               aria-label="Kora Website"

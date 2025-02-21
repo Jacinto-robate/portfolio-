@@ -19,7 +19,8 @@ export const TextGenerateEffect = ({
 
   // Lista de palavras importantes para destacar
   const importantName = "Jacinto Sérgio Robate";
-  const portfolioUrl = "https://avatars.githubusercontent.com/u/195300426?v=4"; // Replace with actual portfolio URL
+  const portfolioUrl =
+    "https://private-user-images.githubusercontent.com/195300426/404854805-1a902361-a59f-4162-8267-94d9142c18fb.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MzczNzIyNTIsIm5iZiI6MTczNzM3MTk1MiwicGF0aCI6Ii8xOTUzMDA0MjYvNDA0ODU0ODA1LTFhOTAyMzYxLWE1OWYtNDE2Mi04MjY3LTk0ZDkxNDJjMThmYi5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwMTIwJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDEyMFQxMTE5MTJaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0xZDg0NTUxMjJlYzcxNjdiNGJmZDJiMjRlMGYwNzc4MDliNTMxYjNhYjk0NGUyYjQzYjZkOWIxYjUzZjhmYzBmJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.bivCuAu-x1cNjAulurJnqrS59CGXJ1EHQGffhTAJQxs"; // Replace with actual portfolio URL
 
   // Função para formatar o texto em parágrafos
   const formatText = (text: string) => {
